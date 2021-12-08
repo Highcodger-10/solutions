@@ -83,7 +83,7 @@ string InfixToPostfix(stack s1, string infix){
 			s1.push(infix[i]);
 
 		else if(infix[i] == ')'){
-      
+
 			while((s1.topelement()!='(') && (!s1.isempty())){
 				char temp=s1.topelement();
 				postfix = postfix + temp;
@@ -107,7 +107,7 @@ string InfixToPostfix(stack s1, string infix){
 					s1.push(infix[i]);
 				else{
 					while((!s1.isempty())&&( precedence(infix[i])<=precedence(s1.topelement()))){
-						postfix+=s1.topelement();
+						postfix = postfix + s1.topelement();
 						s1.pop();
 					}
 					s1.push(infix[i]);
